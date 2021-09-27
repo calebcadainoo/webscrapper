@@ -2,9 +2,14 @@ const PORT = process.env.PORT || 8000;
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
+const cors = require('cors');
 
 const app = express();
 const urlToScrape = 'https://www.theguardian.com/international';
+
+// Middlewares
+app.use(express.json());
+app.use(cors());
 
 const articles = [];
 axios(urlToScrape)
@@ -21,8 +26,6 @@ axios(urlToScrape)
         url,
       });
     });
-
-    // console.log(articles);
   })
   .catch((err) => console.log(err));
 
