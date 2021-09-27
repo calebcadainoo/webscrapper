@@ -3,6 +3,7 @@
 A webscraper made for fun
 
 `PORT: 8000`
+TODO: Add Slackbot to App when the app throws an error
 
 ## Site Scrapped
 

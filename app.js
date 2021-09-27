@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 const articles = [];
+
 axios(urlToScrape)
   .then((response) => {
     const html = response.data;
