@@ -1,0 +1,22 @@
+{
+  "name": "webscrapper",
+  "version": "1.0.0",
+  "description": "A webscrapper for future use",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebcadainoo/webscrapper.git"
+  },
+  "keywords": [
+    "webscrapper"
+  ],
+  "author": "Caleb Crosby Adainoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calebcadainoo/webscrapper/issues"
+  },
+  "homepage": "https://github.com/calebcadainoo/webscrapper#readme"
+}
