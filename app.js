@@ -7,10 +7,10 @@ const { response } = require('express');
 const app = express();
 const urlToScrape = 'https://www.theguardian.com/international';
 
+const articles = [];
 axios(urlToScrape)
   .then((response) => {
     const html = response.data;
-    const articles = [];
     const $ = cheerio.load(html);
 
     $('.fc-item__title', html).each(function () {
@@ -23,12 +23,12 @@ axios(urlToScrape)
       });
     });
 
-    console.log(articles);
+    // console.log(articles);
   })
   .catch((err) => console.log(err));
 
-// app.get('/', (req, res) => {
-//   'hello';
-// });
+app.get('/', (req, res) => {
+  res.json(articles);
+});
 
 app.listen(PORT, console.log(`https://localhost:${PORT} is running...`));
