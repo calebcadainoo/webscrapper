@@ -14,24 +14,23 @@ app.use(cors());
 const articles = [];
 
 axios(urlToScrape)
-  .then((response) => {
-    const html = response.data;
-    const $ = cheerio.load(html);
+	.then((response) => {
+		const html = response.data;
+		const $ = cheerio.load(html);
 
-    $('.fc-item__title', html).each(function () {
-      const title = $(this).text();
-      const url = $(this).find('a').attr('href');
-
-      articles.push({
-        title,
-        url,
-      });
-    });
-  })
-  .catch((err) => console.log(err));
+		$('.fc-item__title', html).each(function () {
+			const title = $(this).text();
+			const url = $(this).find('a').attr('href');
+			articles.push({
+				title,
+				url,
+			});
+		});
+	})
+	.catch((err) => console.log(err));
 
 app.get('/', (req, res) => {
-  res.json(articles);
+	res.json(articles);
 });
 
-app.listen(PORT, console.log(`https://localhost:${PORT} is running...`));
+app.listen(PORT, console.log(`http://localhost:${PORT} is running...`));
